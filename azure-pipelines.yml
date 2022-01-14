@@ -33,3 +33,10 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1(e2a0fc55-816f-4cdf-9b3c-7e6616d37ff9)'
+    appType: 'webApp'
+    WebAppName: 'reactmemoweb'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
